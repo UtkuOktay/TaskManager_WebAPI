@@ -1,5 +1,7 @@
 package com.example.taskmanagerwebapi.Task;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TaskItem {
     private String id;
     private String name;
@@ -27,6 +29,7 @@ public class TaskItem {
         this.name = name;
     }
 
+    @JsonProperty("isCompleted")
     public boolean isCompleted() {
         return isCompleted;
     }
