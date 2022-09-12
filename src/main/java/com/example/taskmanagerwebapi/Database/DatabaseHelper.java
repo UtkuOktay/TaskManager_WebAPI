@@ -68,7 +68,7 @@ public class DatabaseHelper {
             return null;
         }
         catch (SQLException e) {
-            return "An error occured during the database connection.";
+            return "An error occured during the operation.";
         }
     }
 
@@ -84,7 +84,7 @@ public class DatabaseHelper {
             return null;
         }
         catch (SQLException e) {
-            return "An error occured during the database connection.";
+            return "An error occured during the operation.";
         }
     }
 
@@ -98,7 +98,7 @@ public class DatabaseHelper {
             return null;
         }
         catch (SQLException e) {
-            return "An error occured during the database connection.";
+            return "An error occured during the operation.";
         }
     }
 }
