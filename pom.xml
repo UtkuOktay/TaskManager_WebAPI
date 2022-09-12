@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>TaskManager-WebAPI</artifactId>
+    <artifactId>TaskManager_WebAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>TaskManager-WebAPI</name>
-    <description>TaskManager-WebAPI</description>
+    <name>TaskManager_WebAPI</name>
+    <description>TaskManager_WebAPI</description>
     <properties>
         <java.version>17</java.version>
     </properties>
