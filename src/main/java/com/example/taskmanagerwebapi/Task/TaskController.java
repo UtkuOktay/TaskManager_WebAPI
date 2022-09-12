@@ -9,8 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/task")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TaskController {
-    private DatabaseHelper databaseHelper;
+    private final DatabaseHelper databaseHelper;
 
     @Autowired
     public TaskController(DatabaseHelper databaseHelper) {
@@ -33,8 +34,8 @@ public class TaskController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Object> addTask(@RequestParam String name, @RequestParam boolean isCompleted) {
-        String result = databaseHelper.insertTask(name, isCompleted);
+    public ResponseEntity<Object> addTask(@RequestBody String name) {
+        String result = databaseHelper.insertTask(name, false);
 
         if (result != null)
             return ResponseEntity.badRequest().body(result);
@@ -43,8 +44,8 @@ public class TaskController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Object> updateTask(@RequestParam String id, @RequestParam String name, @RequestParam boolean isCompleted) {
-        String result = databaseHelper.updateTask(new TaskItem(id, name, isCompleted));
+    public ResponseEntity<Object> updateTask(@RequestBody TaskItem task) {
+        String result = databaseHelper.updateTask(task);
 
         if (result != null)
             return ResponseEntity.badRequest().body(result);
